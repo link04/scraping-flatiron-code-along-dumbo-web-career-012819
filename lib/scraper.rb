@@ -27,7 +27,7 @@ class Scraper
   
   def make_courses
     self.get_courses.each do |post|
-      if post.css("h2").text != nil
+      if post.css("h2").text != ""
         course = Course.new
         course.title = post.css("h2").text
         course.schedule = post.css(".date").text
